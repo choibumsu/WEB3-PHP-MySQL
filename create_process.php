@@ -1,7 +1,7 @@
 <?php
-$conn=mysqli_connect("localhost", "root", "111111", "topic");
+$conn=mysqli_connect("localhost", "root", "111111", "bumsu");
 $sql = "
-  INSERT INTO bumsu
+  INSERT INTO topic
     (title, description, created)
     VALUES(
       '{$_POST['title']}',
@@ -15,6 +15,9 @@ if($result === false) {
   error_log(mysqli_error($conn));
 }
 else {
-  echo 'success. <a href="index.php">돌아가기</a>';
+  $sql = "SELECT * FROM topic ORDER BY id DESC LIMIT 1";
+  $res = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_array($res);
+  header('Location: /index.php?id='.$row['id']);
 }
 ?>
