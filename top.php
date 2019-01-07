@@ -12,6 +12,7 @@ require_once ('lib/print.php');
 </head>
 <body>
   <h1> <a href="index.php" title="home">Bumsu_Home</a></h1>
+  <p><a href="author.php">author</a></p>
   <ol>
     <?php    print_list();    ?>
   </ol>
