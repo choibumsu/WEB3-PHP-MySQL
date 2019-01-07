@@ -1,11 +1,17 @@
 <?php
 $conn=mysqli_connect("localhost", "root", "111111", "bumsu");
+
+$filtered = array(
+  'title' => mysqli_real_escape_string($conn, $_POST['title']),
+  'description' => mysqli_real_escape_string($conn, $_POST['description'])
+);
+
 $sql = "
   INSERT INTO topic
     (title, description, created)
     VALUES(
-      '{$_POST['title']}',
-      '{$_POST['description']}',
+      '{$filtered['title']}',
+      '{$filtered['description']}',
       NOW()
       )
   ";
