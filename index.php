@@ -14,9 +14,8 @@ require_once ('view/top.php');
   <h2>
     <?php    print_title();    ?>
   </h2>
-  <p>
-    <?php    print_desc();    ?>
-  </p>
+  <p> <?php    print_desc();    ?>  </p>
+  <p> <?php   print_name();    ?>  </p>
 <?php
 require_once ('view/bottom.php');
 ?>
